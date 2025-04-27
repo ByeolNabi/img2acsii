@@ -34,11 +34,10 @@ std::vector<int> loadLUT(const std::string& filename) {
 int main() {
   // --- 설정값 ---
   const std::string lut_filepath = "scripts/reference/Consolas_LUT.txt";
-  const std::string image_filepath = "data/test.png";  // 처리할 이미지 파일 경로
-  const int base_width = 11;                      // 기본 셀 너비
-  const int base_height = 19;                     // 기본 셀 높이
-  const double scale_factor =
-      1.0;  // 셀 크기 조절 인자 (1.0 = 11x19, 2.0 = 22x38 등)
+  const std::string image_filepath = "data/test.png";
+  const int base_width = 10;   // 글꼴 셀 너비
+  const int base_height = 40;  // 글꼴 셀 높이
+  const double scale_factor = 0.1;
   // --- 설정값 끝 ---
 
   // LUT 로드
@@ -113,6 +112,5 @@ int main() {
   // cv::imshow("Grayscale Image", img_gray);
   // cv::waitKey(0);
 
-  waitKey(0);
   return 0;
 }
