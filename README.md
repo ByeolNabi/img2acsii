@@ -11,3 +11,6 @@ cmake ..
 make
 ./program_name # 파일 실행
 ```
+
+# 개발 일지
+1. ASCII 모든 문자들을 검은픽셀 순으로 LUT로 만들기
