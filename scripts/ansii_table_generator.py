@@ -63,9 +63,16 @@ def img2lut(img, apply_contrast_stretch=True):  # 대비 늘리기 적용 여부
             print("선형 대비 늘리기 적용 중...")
             white_level_arr = stretch_contrast(white_level_arr)  # 대비 늘리기 적용
 
-        lut = array2lut(white_level_arr)  # 기존 방식
+        # 생성된 ascii별 grayScale Info를 txt 파일로 저장
+        output_filename = "scripts/reference/Consolas_GrayScale.txt"
+        try:
+            # NumPy 배열로 변환하여 저장 (각 숫자를 정수로 저장)
+            np.savetxt(output_filename, np.array(white_level_arr), fmt="%d")
+            print(f"LUT가 '{output_filename}' 파일로 저장되었습니다.")
+        except Exception as e:
+            print(f"Error: grayScale를 파일로 저장하는 중 오류 발생 - {e}")
 
-        print("[func img2lut] 리턴된 lut : ", lut[:])
+        lut = array2lut(white_level_arr)  # 기존 방식
 
         return lut
     else:
