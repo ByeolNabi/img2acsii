@@ -34,7 +34,7 @@ std::vector<int> loadLUT(const std::string& filename) {
 int main() {
   // --- 설정값 ---
   const std::string lut_filepath = "scripts/reference/Consolas_LUT.txt";
-  const std::string image_filepath = "roro.jpg";  // 처리할 이미지 파일 경로
+  const std::string image_filepath = "data/test.png";  // 처리할 이미지 파일 경로
   const int base_width = 11;                      // 기본 셀 너비
   const int base_height = 19;                     // 기본 셀 높이
   const double scale_factor =
@@ -97,7 +97,7 @@ int main() {
       int char_index = lut[lut_index];  // lut_index는 0~255 범위이므로 유효
 
       // 문자 인덱스를 실제 ASCII 문자로 변환 (인덱스 + 32)
-      char ascii_char = static_cast<char>(char_index + 32);
+      char ascii_char = static_cast<char>(char_index);
 
       // 변환된 ASCII 문자 출력
       std::cout << ascii_char;
